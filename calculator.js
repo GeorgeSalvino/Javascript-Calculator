@@ -14,9 +14,9 @@ $(".on-off").on("click",function(){
 //								     NUMBERS								   //
 /////////////////////////////////////////////////////////////////////////////////
 
-$(".number,.dot").on("click",function(){
+$(".number").on("click",function(){
 	if($(".body").hasClass("on")){
-		if($(".count").text()==0){
+		if($(".count").text()=="0"){
 			$(".count,#currentNum").text("")
 		}
 		if($("#currentNum").text()==="+"||$("#currentNum").text()==="-"||$("#currentNum").text()==="/"||$("#currentNum").text()==="x"){
@@ -29,6 +29,14 @@ $(".number,.dot").on("click",function(){
 		}
 	}
 })
+
+$(".dot").on("click",function(){
+	if($("#currentNum").text().indexOf(".")==-1){
+		$(".count").text($(".count").text()+$(this).text())
+		$("#currentNum").text($("#currentNum").text()+$(this).text())
+	}
+})
+
 
 
 /////////////////////////////////////////////////////////////////////////////////
